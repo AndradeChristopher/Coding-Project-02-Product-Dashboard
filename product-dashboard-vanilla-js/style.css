@@ -1,1 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 18px;
+}
 
+header {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+#product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+}
