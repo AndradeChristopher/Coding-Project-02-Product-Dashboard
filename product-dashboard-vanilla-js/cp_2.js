@@ -14,3 +14,19 @@ function fetchProductsThen() {
             console.log(error);
         });
 }
+
+function handleError(error) {
+    console.log(`Error occurred: ${error.message}`);
+}
+
+async function fetchProductsAsync() {
+    try {
+        const response = await fetch(url);
+        const products = await response.json();
+
+        displayProducts(products);
+
+    } catch (error) {
+        handleError(error);
+    }
+}
