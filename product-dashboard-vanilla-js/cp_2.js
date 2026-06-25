@@ -30,3 +30,26 @@ async function fetchProductsAsync() {
         handleError(error);
     }
 }
+
+// Format
+
+function displayProducts(products) {
+    const container = document.getElementById("product-container");
+
+    products.slice(0, 5).forEach(product => {
+        const card = document.createElement("div");
+        card.classList.add("product-card");
+
+        card.innerHTML = `
+            <h3>${product.fields.name}</h3>
+            <img src="${product.fields.image[0].url}" alt="${product.fields.name}">
+            <p>$${product.fields.price / 100}</p>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+// Fetch
+fetchProductsThen();
+fetchProductsAsync();
